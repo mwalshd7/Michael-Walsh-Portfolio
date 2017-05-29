@@ -1,0 +1,38 @@
+.frontPageH1{
+    padding-left: 40px;
+    font-family: Palatino;
+    margin-top: 50px;
+
+}
+
+.frontPageH2{
+    padding-left: 40px;
+    font-family: Palatino;
+    margin-top: 50px;
+    height: 400px;
+
+}
+
+.header{
+    display: none;
+    z-index: 1;
+    position: absolute;
+
+}
+
+.header-visible{
+    display: block;
+}
+
+.header ul {
+    list-style-type: none;
+
+}
+.header li{
+    display: inline;
+    margin-right: 30px;
+}
+
+#mwProfile {
+    height: 600px;
+}
