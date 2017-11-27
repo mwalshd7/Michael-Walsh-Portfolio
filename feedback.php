@@ -146,9 +146,9 @@
 <?php
 
 $servername = "localhost";
-$username = "username";
-$password = "password";
-$database = "database";
+$username = "id2615334_mrwalsh";
+$password = "Jetski32*";
+$database = "id2615334_mw_contact_form";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
