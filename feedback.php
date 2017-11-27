@@ -103,7 +103,7 @@
 
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
-                    <h3>Send me a message</h3>
+                    <h3>Tell me what you think.....</h3>
                     <form role="form" id="contactForm">
                         <div class="form-group">
                             <label for="name" class="h4">Name</label>
@@ -142,3 +142,20 @@
 </body>
 
 </html>
+
+<?php
+
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$database = "database";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>

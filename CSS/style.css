@@ -241,3 +241,25 @@ margin: auto;
 h3 a {
     color:orangered;
 }
+
+
+.h3 {
+    visibility: hidden;
+}
+
+
+    .center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+
+
+.h4, .form-control  {
+    font-size: 1.1em;
+}
+
+
