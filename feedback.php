@@ -1,3 +1,23 @@
+<?php
+if (isset ($_POST['submit'])) {
+
+require 'connection.php';
+$conn    = Connect();
+$name    = $conn->real_escape_string($_POST['u_name']);
+$email   = $conn->real_escape_string($_POST['u_email']);
+$message = $conn->real_escape_string($_POST['message']);
+$query   = "INSERT into contact (name,email,message) VALUES('" . $name . "','" . $email . "','" . $message . "')";
+$success = $conn->query($query);
+
+if (!$success) {
+    die("Couldn't enter data: ".$conn->error);
+
+}
+
+$conn->close();
+header('Location: /thankyou.php',true, 301);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,22 +125,22 @@
                 <div class="col-sm-6 col-sm-offset-3">
                     <h3>Tell me what you think.....</h3>
 
-                    <form role="form" id="contactForm" action="" method="post">
+                    <form role="form" id="contactForm" action="feedback.php" method="post">
                         <div class="form-group">
                             <label for="name" class="h4">Name</label>
-                            <input type="text" name="u_name" class="form-control" id="name" required>
+                            <input type="text" name="u_name" class="form-control" id="name" placeholder="Enter name" required>
                         </div>
                         <div class="form-group">
                             <label for="email" class="h4">Email</label>
-                            <input type="email" name="u_email" class="form-control" id="email" required>
+                            <input type="email" name="u_email" class="form-control" id="email" placeholder="Enter email" required>
                         </div>
 
 
                         <div class="form-group">
                             <label for="message" class="h4 ">Message</label>
-                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
                         </div>
-                        <button type="submit" value="Submit" name="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Submit</button>
+                        <button type="submit" name="submit" value="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Submit</button>
 
 
                     </form>
@@ -141,27 +161,4 @@
         </div>
     </div>
 </body>
-
 </html>
-
-<?php
-
-require 'connection.php';
-$conn    = Connect();
-$name    = $conn->real_escape_string($_POST['u_name']);
-$email   = $conn->real_escape_string($_POST['u_email']);
-
-$message = $conn->real_escape_string($_POST['message']);
-$query   = "INSERT into contact (name,email,message) VALUES('" . $name . "','" . $email . "','" . $message . "')";
-$success = $conn->query($query);
-
-if (!$success) {
-    die("Couldn't enter data: ".$conn->error);
-
-}
-
-Redirect('/thankyou.php');
-$conn->close();
-
-
-?>
