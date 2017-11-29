@@ -87,11 +87,10 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Contact">Get in Touch</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Contact">Contact</a>
                         <div class="dropdown-menu no-border" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="mailto: michaelrwalsh@yahoo.ie?Subject=I visited your website and liked it"><i class="fa fa-envelope-o fa-2x" title="Email" aria-hidden="true" ></i></a>
                             <a class="dropdown-item" href="skype:michaelrwalsh@yahoo.ie?call"><i class="fa fa-skype fa-2x" title="Skype" aria-hidden="true"></i></a>
-                            <a class="dropdown-item" href="feedback.php"><i class="fa fa-comment-o fa-2x" title="Comments" aria-hidden="true"></i></a>
                         </div>
                     </li>
                 </ul>
@@ -99,29 +98,29 @@
         </nav>
     </header>
     <!-- Splash Image -->
-    <div class="container">
-        <div class="bodenZeeImg" id="splash-image">
-            <img class="img-responsive" src="images/IMG_2403.png" alt="BodenZee, Switzerland" title="BodenZee - Switzerland" width="1200" height="345">
+    <div class="container ">
+        <div class="jumbotron" style="margin-top:50px;">
+            <h3>Thank you for your feedback....</h3>
+            <h3>You will be redirected shortly..if not click here.....<a href="index.html"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a></h3>
+
         </div>
-        <!-- Content -->
-        <h2 class="frontPageH2" id="onLoadInsert" onclick="myTimerAnimationText()"></h2>
-        <p class="aboutMeH3" id="onLoadAboutMe"></p>
-        <h3 class="frontPageH3" id="onBioInsert"></h3>
-        <p class="aboutMeH3" id="onMyCV"></p>
-        <div class="embed-responsive" style="padding-bottom:150%">
-            <h3 class="frontPageH3" id="onCVInsert" style="display: none">
-                <object data="/docs/Michael%20Walsh%20CV%20Nov2017PDF.pdf" width="100%" height="100%" type="application/pdf"></object>
-            </h3>
-        </div>
-        <!-- Back to Top -->
-        <a href="#0" class="cd-top">Top</a>
     </div>
+    <!-- Back to Top -->
+    <a href="#0" class="cd-top">Top</a>
     <!-- Footer -->
     <footer class="container">
         <div id="footer">
             <div class="copyright">© MW Design 2017</div>
         </div>
     </footer>
+
+    <script type="text/javascript">
+        function Redirect() {
+            window.location = "index.html";
+        }
+        setTimeout('Redirect()', 5000);
+
+    </script>
 </body>
 
 </html>

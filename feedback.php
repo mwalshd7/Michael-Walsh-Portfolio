@@ -1,3 +1,23 @@
+<?php
+if (isset ($_POST['submit'])) {
+
+require 'connection.php';
+$conn    = Connect();
+$name    = $conn->real_escape_string($_POST['u_name']);
+$email   = $conn->real_escape_string($_POST['u_email']);
+$message = $conn->real_escape_string($_POST['message']);
+$query   = "INSERT into contact (name,email,message) VALUES('" . $name . "','" . $email . "','" . $message . "')";
+$success = $conn->query($query);
+
+if (!$success) {
+    die("Couldn't enter data: ".$conn->error);
+
+}
+
+$conn->close();
+header('Location: /thankyou.php',true, 301);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +33,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
 
     <!-- BootStrap Icons -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
@@ -21,18 +42,20 @@
     <link rel="stylesheet" href="/CSS/style.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Michroma" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
 
     <!-- JS Links -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://use.fontawesome.com/0b60fe69c9.js"></script>
+    <script type="text/javascript" src="https://use.fontawesome.com/0b60fe69c9.js"></script>
 
     <!-- MW JS -->
     <script type="text/javascript" src="/scripts/script.js"></script>
 </head>
 
-<body onload="myTimer()">
+<body>
 
     <!-- Header and Nav -->
     <header class="container" id="NavContainer">
@@ -53,6 +76,8 @@
 </svg>
         <p style="color:black; opacity: 0.6; float: left; padding-top: 15px; padding-left: 5px;">Michael Walsh</p>
 
+
+
         <nav class="navbar navbar-toggleable-md navbar-light bg-transparent">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -63,31 +88,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html" title="Home">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="myBio()" title="About">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" title="Curriculum Vitae" onclick="myCV()">Curriculum Vitae</a>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Social">Social Media</a>
                         <div class="dropdown-menu no-border" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="https://www.linkedin.com/in/michael-walsh-8775459/"><i class="fa fa-linkedin fa-2x" title="LinkedIn" aria-hidden="true"></i></a>
-
-                            <a class="dropdown-item" href="https://michaelrwalsh2017.wordpress.com"><i class="fa fa-wordpress fa-2x" title="WordPress" aria-hidden="true"></i></a>
-
                         </div>
-
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Software">Software</a>
                         <div class="dropdown-menu no-border" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="https://github.com/mwalshd7"><i class="fa fa-github fa-2x"  title="GitHub" aria-hidden="true"></i></a>
-                            <a class="dropdown-item" href="samples.html"><i class="fa fa-briefcase fa-2x"  title="Project Examples" aria-hidden="true"></i></a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-briefcase fa-2x"  title="Project Examples" aria-hidden="true"></i></a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Contact">Get in Touch</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Contact">Contact</a>
                         <div class="dropdown-menu no-border" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="mailto: michaelrwalsh@yahoo.ie?Subject=I visited your website and liked it"><i class="fa fa-envelope-o fa-2x" title="Email" aria-hidden="true" ></i></a>
                             <a class="dropdown-item" href="skype:michaelrwalsh@yahoo.ie?call"><i class="fa fa-skype fa-2x" title="Skype" aria-hidden="true"></i></a>
@@ -98,30 +114,51 @@
             </div>
         </nav>
     </header>
-    <!-- Splash Image -->
-    <div class="container">
-        <div class="bodenZeeImg" id="splash-image">
-            <img class="img-responsive" src="images/IMG_2403.png" alt="BodenZee, Switzerland" title="BodenZee - Switzerland" width="1200" height="345">
-        </div>
-        <!-- Content -->
-        <h2 class="frontPageH2" id="onLoadInsert" onclick="myTimerAnimationText()"></h2>
-        <p class="aboutMeH3" id="onLoadAboutMe"></p>
-        <h3 class="frontPageH3" id="onBioInsert"></h3>
-        <p class="aboutMeH3" id="onMyCV"></p>
-        <div class="embed-responsive" style="padding-bottom:150%">
-            <h3 class="frontPageH3" id="onCVInsert" style="display: none">
-                <object data="/docs/Michael%20Walsh%20CV%20Nov2017PDF.pdf" width="100%" height="100%" type="application/pdf"></object>
-            </h3>
-        </div>
-        <!-- Back to Top -->
-        <a href="#0" class="cd-top">Top</a>
-    </div>
-    <!-- Footer -->
-    <footer class="container">
-        <div id="footer">
-            <div class="copyright">© MW Design 2017</div>
-        </div>
-    </footer>
-</body>
 
+    <!-- Content -->
+    <div class="container">
+        <div class="container" style="margin-top: 10px;">
+            <h1>Feedback Form</h1>
+
+
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h3>Tell me what you think.....</h3>
+
+                    <form role="form" id="contactForm" action="feedback.php" method="post">
+                        <div class="form-group">
+                            <label for="name" class="h4">Name</label>
+                            <input type="text" name="u_name" class="form-control" id="name" placeholder="Enter name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="h4">Email</label>
+                            <input type="email" name="u_email" class="form-control" id="email" placeholder="Enter email" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="message" class="h4 ">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" name="submit" value="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Submit</button>
+
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- Back to Top Button -->
+            <div>
+                <a href="#0" class="cd-top">Top</a>
+            </div>
+
+            <!-- Footer -->
+            <footer class="container">
+                <div id="footer">
+                    <div class="copyright">© MW Design 2017</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
 </html>
