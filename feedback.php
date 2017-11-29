@@ -107,7 +107,7 @@ header('Location: /thankyou.php',true, 301);
                         <div class="dropdown-menu no-border" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="mailto: michaelrwalsh@yahoo.ie?Subject=I visited your website and liked it"><i class="fa fa-envelope-o fa-2x" title="Email" aria-hidden="true" ></i></a>
                             <a class="dropdown-item" href="skype:michaelrwalsh@yahoo.ie?call"><i class="fa fa-skype fa-2x" title="Skype" aria-hidden="true"></i></a>
-
+                            <a class="dropdown-item" href="feedback.php"><i class="fa fa-comment-o fa-2x" title="Comments" aria-hidden="true"></i></a>
                         </div>
                     </li>
                 </ul>
