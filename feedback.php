@@ -9,6 +9,16 @@ $message = $conn->real_escape_string($_POST['message']);
 $query   = "INSERT into contact (name,email,message) VALUES('" . $name . "','" . $email . "','" . $message . "')";
 $success = $conn->query($query);
 
+    if (isset($_REQUEST['u_email']))  {
+//Email information
+  $admin_email = "michaelrwalsh@yahoo.ie";
+  $u_email = $_REQUEST['u_email'];
+  $subject = 'You have new feedback!';
+  $comment = $_REQUEST['message'];
+  //send email
+  mail($admin_email, $subject, $comment, "From:" . $u_email);
+}
+
 if (!$success) {
     die("Couldn't enter data: ".$conn->error);
 
