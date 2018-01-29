@@ -4,7 +4,7 @@
             document.getElementById("onBioInsert").style.display = "none";
             document.getElementById("onMyCV").removeAttribute("style");
             document.getElementById("onCVInsert").removeAttribute("style");
-            document.getElementById("onMyCV").innerHTML = "<span>Curriculum Vitae<a href = 'docs/Michael Walsh CV Nov2017PDF.pdf'> <h5>On IOS Devices, the PDF may not view correctly. Click here to download.<h5></a></span>";
+            document.getElementById("onMyCV").innerHTML = "<span>Curriculum Vitae<a href = 'docs/Michael Walsh CV Nov2017PDF.pdf'> <h5>On IOS Devices, the second page of the PDF may not view correctly. Click here to download.<h5></a></span>";
 
             document.getElementById("onMyCV").scrollIntoView({
                 behavior: "smooth",
