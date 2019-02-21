@@ -15,9 +15,10 @@ None.
 * [HTML](https://www.w3.org/TR/html/) - HTML5. The standard markup language for creating Web pages.
 * [CSS](https://www.w3.org/Style/CSS/) - CSS3. How HTML elements are to be displayed/presented.
 * [Javascript](https://developer.mozilla.org/bm/docs/Web/JavaScript) - JavaScript (JS) is a lightweight,interpreted or JIT compiled programming language with first-class functions.
-* [JQuery](https://jquery.com/) jQuery. The Write Less, Do More, JavaScript Library.
+* [JQuery](https://jquery.com/) - jQuery. The Write Less, Do More, JavaScript Library.
 * [BootStrap](https://getbootstrap.com/) - Bootstrap 4. Build responsive, mobile-first projects on the web.
-* [FontAwesome](https://fontawesome.com/) Font Awesome. "A font that's made up of symbols, icons, or pictograms..." 
+* [FontAwesome](https://fontawesome.com/) - Font Awesome. "A font that's made up of symbols, icons, or pictograms...".
+* [PHP](http://www.php.net/) -  PHP.  Server-side scripting language designed for web development
 
 
 ## Authors
