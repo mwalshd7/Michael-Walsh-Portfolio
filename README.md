@@ -30,3 +30,4 @@ None.
 ## Acknowledgments
 
 ## Examples
+![mw_v2018_ex1](https://user-images.githubusercontent.com/26001786/53169529-6fb5c380-35d5-11e9-9608-e5afc63ee97c.PNG)
