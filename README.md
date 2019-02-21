@@ -39,7 +39,7 @@ Projects Page (DBS C#.net 3-Tier architecture (CRUD) Student Database)
 Projects Page Continued..(More details on the indiviual projects)
 ![mw_v2018_ex3](https://user-images.githubusercontent.com/26001786/53170308-b9071280-35d7-11e9-8e87-2dc1e5d511b5.PNG)
 
-PHP Comments Page
+Comments Page built with PHP.
 ![mw_v2018_ex4](https://user-images.githubusercontent.com/26001786/53170451-071c1600-35d8-11e9-8438-0cf4e37e8ba5.PNG)
 
 
