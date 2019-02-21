@@ -32,3 +32,14 @@ None.
 ## Website Examples
 Home Page
 ![mw_v2018_ex1](https://user-images.githubusercontent.com/26001786/53169529-6fb5c380-35d5-11e9-9608-e5afc63ee97c.PNG)
+
+Projects Page (DBS C#.net 3-Tier architecture (CRUD) Student Database)
+![mw_v2018_ex2](https://user-images.githubusercontent.com/26001786/53169974-c374dc80-35d6-11e9-8967-b46fba6ae17d.PNG)
+
+Projects Page Continued..(More details on the indiviual projects)
+![mw_v2018_ex3](https://user-images.githubusercontent.com/26001786/53170308-b9071280-35d7-11e9-8e87-2dc1e5d511b5.PNG)
+
+PHP Comments Page
+![mw_v2018_ex4](https://user-images.githubusercontent.com/26001786/53170451-071c1600-35d8-11e9-8438-0cf4e37e8ba5.PNG)
+
+
